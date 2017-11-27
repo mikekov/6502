@@ -1,0 +1,92 @@
+Sk³adnia BNF makroasemblera 6502
+
+
+<program> ::= { <wiersz_programu><EOL> }
+
+<wiersz_programu> ::= <wiersz_instr> | <wiersz_przypis> | <wiersz_etyk> | <wiersz_koment>
+
+<wiersz_instr>  ::= <odstêp> [<instrukcja>] [<odstêp>] [<komentarz>]
+<wiersz_przypis>::= <etykieta> [<odstêp>] ['='[<odstêp>]<wyra¿enie>] [<odstêp>] [<komentarz>]
+<wiersz_etyk>   ::= <etykieta> [<odstêp>] [':'] [<odstêp>] [<instrukcja>] [<odstêp>] [<komentarz>]
+<wiersz_koment> ::= [<odstêp>] [<komentarz>]
+
+<instrukcja> ::= <rozkaz> | <dyrektywa>
+
+<rozkaz> ::= <rozkaz_imp> | <rozkaz_idx> | <rozkaz_post> | <rozkaz_pre> | <rozkaz_imm>
+<rozkaz_imp>  ::= <mnemonik>
+<rozkaz_idx>  ::= <mnemonik> <wyra¿enie> [ ',' 'X'|'Y' ]
+<rozkaz_post> ::= <mnemonik> '(' <wyra¿enie> ',' 'X' ')'
+<rozkaz_pre>  ::= <mnemonik> '(' <wyra¿enie> ')' [',' 'Y']
+<rozkaz_imm>  ::= <mnemonik> [#] <wyra¿enie> [',' <wyra¿enie> [',' <wyra¿enie>]]
+
+<mnemonik> ::= 
+  LDA|LDX|LDY|STA|STX|STY|STZ|TAX|TXA|TAY|TYA|TXS|TSX|ADC|SBC|CMP|CPX|CPY|
+  INC|DEC|INA|DEA|INX|DEX|INY|DEY|ASL|LSR|ROL|ROR|AND|ORA|EOR|BIT|TSB|
+  TRB|JMP|JSR|BRK|BRA|BPL|BMI|BVC|BVS|BCC|BCS|BNE|BEQ|RTS|RTI|PHA|PLA|
+  PHX|PLX|PHY|PLY|PHP|PLP|CLC|SEC|CLV|CLD|SED|CLI|SEI|NOP|
+  BBR|BBS|RMB|SMB
+
+<dyrektywa> ::=  <nazwa_dyrektywy> [<argumenty_dyrektywy>]
+
+<nazwa_dyrektywy> ::=
+  .=|*=|.ASCII|.ASCIS|.BYTE|.DB|.DBYTE|.DCB|.DD|.DS|.DW|
+  .ELSE|.END|.ENDIF|.ENDM|.ENDR|.ERROR|.EXITM|.IF|.INCLUDE|
+  .MACRO|.ORG|.REPEAT|.REPT|.RS|.SET|.START|.STR|.STRING|.WORD
+
+<argumenty_dyrektywy> ::= <arg_opcje> | <arg_lista> | <arg_makra>
+
+<arg_opcje> ::=
+<arg_lista> ::= <wyra¿enie> {',' <wyra¿enie>}
+<arg_makra> ::= [<param> {',' <param>} [',' '...']] | ['...']
+
+<param>     ::= <ident>
+
+<wyra¿enie>    ::= <wyr_bool_or>
+<wyr_bool_or>  ::= <wyr_bool_and> '||' <wyr_bool_and>
+<wyr_bool_and> ::= <wyr_bool_cmp> '&&' <wyr_bool_cmp>
+<wyr_bool_cmp> ::= <wyr_bitowe> <oper_cmp> <wyr_bitowe>
+<wyr_bitowe>   ::= <wyr_suma> <oper_bit> <wyr_suma>
+<wyr_suma>     ::= <wyr_przes_bit> <oper_sum> <wyr_przes_bit>
+<wyr_przes_bit>::= <wyr_iloczyn> <oper_sft> <wyr_iloczyn>
+<wyr_iloczyn>  ::= <wyr_czynnik> <oper_mul> <wyr_czynnik>
+<wyr_czynnik>  ::= [<oper_un>] <wyr_sta³e> | '[' <wyra¿enie> ']'
+<wyr_sta³e>    ::= <liczba> | <napis> | <predef_sta³a> | <predef_fn> |
+    <etykieta> | '%'<wyr_czynnik> | '*'
+
+<oper_cmp> ::= '>' | '<' | '>=' | '<=' | '==' | '!='
+<oper_bit> ::= '&' | '|' | '^'
+<oper_sum> ::= '+' | '-'
+<oper_sft> ::= '>>' | '<<'
+<oper_mul> ::= '*' | '/' | '%'
+<oper_un>  ::= '~' | '!' | '-' | '>' | '<'
+
+<liczba>         ::= <sta³a_liczbowa>
+<predef_sta³a>   ::= 'ORG'
+<predef_fn>      ::= <nazwa_predef_fn> <arg_predef_fn> ')'
+
+<nazwa_predef_fn>::= '.DEF(' | '.REF(' | '.STRLEN(' | '.PASSDEF('
+<arg_predef_fn>  ::= <etykieta> | <wyra¿enie>
+<etykieta> ::= <ident> ['#'<wyr_czynnik>]
+<ident>    ::= <alfa> {<alfa>|<cyfra>}
+
+<napis> ::= '"'<znaki>'"'
+
+<sta³a_liczbowa> ::= <sta³a_dec> | <sta³a_hex> | <sta³a_bin>
+<sta³a_dec> ::= <cyfra_dec>{<cyfra_dec>}
+<sta³a_hex> ::= $<cyfra_hex>{<cyfra_hex>}
+<sta³a_bin> ::= @<cyfra_bin>{<cyfra_bin>}
+<cyfra_dec> ::= 0|1|2|3|4|5|6|7|8|9
+<cyfra_hex> ::= <cyfra_dec>|a|b|c|d|e|f|A|B|C|D|E|F
+<cyfra_bin> ::= 0|1
+<litera> ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|
+             A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+<alfa> ::= <litera>|'.'|'?'|'_'
+
+<komentarz> ::= ';'<znaki>
+
+<odstêp> ::= ' ' | <TAB> {' ' | <TAB>}
+
+<znaki> ::= {<znak>}
+<znak>  ::= <znak_ASCII_o_kodzie_od_$20_do_$FF>
+<EOL>   ::= <znaki_koñca_wiersza>
+

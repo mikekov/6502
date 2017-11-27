@@ -1,0 +1,150 @@
+{\rtf1\ansi \deff2\deflang1033{\fonttbl{\f2\fswiss\fcharset238\fprq2 Helv;}{\f3\froman\fcharset238\fprq1 Courier;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;
+\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;
+\red192\green192\blue192;}{\stylesheet{\widctlpar \f2\fs20\lang1045 \snext0 Normal;}{\*\cs10 \additive Default Paragraph Font;}{\*\cs15 \additive\fs23 \sbasedon10 Dyrektywa;}{\*\cs16 \additive\f3\fs20 \sbasedon10 Program;}{\*\cs17 \additive\b\f3\fs20 
+\sbasedon10 Sk\'b3adnia;}{\*\cs18 \additive\f2\fs20 \sbasedon10 Normalny tekst;}{\s19\widctlpar \f2\fs20\lang1045 \sbasedon0\snext19 footnote text;}{\*\cs20 \additive\f2\fs12\super \sbasedon10 footnote reference;}{\s21\fi284\sb40\sa40\widctlpar 
+\f2\fs20\lang1045 \sbasedon0\snext21 Wci\'eaty tekst;}}{\info{\title     "}{\author MiK}{\operator MiK}{\creatim\yr1996\mo11\dy9\hr21\min42}{\revtim\yr1997\mo3\dy2\hr23\min25}{\version4}{\edmins14}{\nofpages9}{\nofwords1366}{\nofchars7787}{\*\company  }
+{\vern57443}}\paperw11907\paperh16840\margl1418\margr0\margt1418\margb1418 \deftab708\widowctrl\ftnbj\aenddoc\hyphhotz425\hyphcaps0\formshade \fet0\sectd \linex0\headery709\footery709\colsx709\endnhere {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang
+{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}
+{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9
+\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \ri-1276\widctlpar \f2\fs20\lang1045 {\ul Opis makroasemblera 6502}
+\par \pard \widctlpar {\cs15\fs23 \page }{\cs20\fs12\super +{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super +} asm}K{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super K} makroasembler; makroasembler, etykiety}#
+{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super #} labels}${\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super $} Etykiety}} {\cs15\fs23 Etykiety}{\cs18 
+\par 
+\par Sk\'b3adnia:
+\par }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs17\b\f3 <etykieta> ::= \lquote .\rquote |\lquote ?\rquote |\lquote _\rquote |<litera> \{\lquote .\rquote |\lquote ?\rquote |\lquote _\rquote |<litera>|<cyfra>\} [#sta\'b3a]\cell }\pard 
+\widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar {\cs18 
+\par Opis:
+\par }\pard\plain \s21\fi284\sb40\sa40\widctlpar \f2\fs20\lang1045 {\cs18 Etykiety wyst\'eapuj\'b9ce w makroasemblerze mo\'bfna podzieli\'e6 ze wzgl\'eadu na zasi\'eag na globalne i lokalne oraz ze wzgl\'eadu na reprezentowan\'b9 warto\'9c\'e6 na etykiety sta
+\'b3ych i zmiennych asemblacji. Dodatkowo istnieje grupa etykiet b\'ead\'b9cych nazwami makrodefinicji oraz etykiety numerowane.
+\par Etykiety globalne s\'b9 widoczne z ka\'bfdego miejsca programu. S\'b9 to etykiety, kt\'f3rych nazwy nie zaczynaj\'b9 si\'ea znakiem kropki \lquote }{\cs16\f3 .}{\cs18 \rquote . Etykiety lokalne, to etykiety o zasi\'ea
+gu ograniczonym do obszaru lokalnego, kt\'f3ry wyst\'eapuje mi\'eadzy definicjami etykiet globalnych. Dodatkowo w obr\'eabie rozwijanej makrodefinicji wyst\'eapuje nowy obszar lokalny. Nazwy wszystkich etykiet lokalnych zaczynaj\'b9 si\'ea znakiem kropki 
+\lquote }{\cs16\f3 .}{\cs18 \rquote .
+\par Etykiety sta\'b3ych asemblacji, to etykiety zdefiniowane przez przypisanie warto\'9cci operatorem }{\cs16\f3 =}{\cs18  lub przez wyst\'b9pienie w polu etykiety oznaczaj\'b9cym przypisanie bie\'bf\'b9cego adresu. Etykietom tym nie mo\'bfna nadawa\'e6
+ ponownie warto\'9cci.
+\par Etykiety zmiennych asemblacji, to etykiety zdefiniowane przez przypisanie warto\'9cci operatorem }{\cs16\f3 .=}{\cs18  lub }{\cs16\f3 .SET}{\cs18 . Warto\'9c\'e6 ich mo\'bfe ulec zmianie po ponownym przypisaniu.
+\par Etykiety numerowane stanowi\'b9 spos\'f3b na dynamiczne definiowanie nowych etykiet poprzez umieszczenie za nazw\'b9 etykiety znaku }{\cs16\f3 #}{\cs18  i sta\'b3ej (numeru etykiety).
+\par Etykiety nazwy makrodefinicji s\'b9 etykietami globalnymi (nie mog\'b9 zaczyna\'e6 si\'ea znakiem kropki \lquote }{\cs16\f3 .}{\cs18 \rquote ) i nie koliduj\'b9 z identycznie nazwanymi etykietami sta\'b3ych lub zmiennych.
+\par }\pard\plain \widctlpar \f2\fs20\lang1045 {\cs18 
+\par Przyk\'b3ady definicji:
+\par }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs16\f3 alfa:\tab \tab ; globalnej etykiety sta\'b3ej \lquote alfa\rquote  o warto\'9cci r\'f3wnej\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard 
+\widctlpar\intbl {\cs16\f3 \tab \tab ; bie\'bf\'b9cemu adresowi\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 beta\tab = 5\tab ; globalnej etykiety sta\'b3ej \lquote beta\rquote  o warto\'9cci 5.\cell }\pard 
+\widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 .loop\tab \tab ; lokalnej etykiety sta\'b3ej \lquote .loop\rquote \cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 .n\tab .= 0\tab 
+; lokalnej etykiety zmiennej \lquote .n\rquote  o warto\'9cci 0.\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 adr#4\tab \tab ; globalnej numerowanej etykiety sta\'b3ej\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard 
+\widctlpar\intbl {\cs16\f3 .adr#[.n+1]\tab ; lokalnej numerowanej etykiety sta\'b3ej\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs16\f3 Print\tab .MACRO\tab 
+; globalnej etykiety nazwy makrodefinicji\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar {\cs15\fs23 \page }{\cs20\fs12\super +{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super +} asm}K{\footnote \pard\plain 
+\s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super K} makroasembler; makroasembler, sta\'b3e liczbowe}#{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super #} num_const}${\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {
+\cs20\fs12\super $} Sta\'b3e liczbowe}}{\cs15\fs23 Sta\'b3e liczbowe}
+\par {\cs18 
+\par Sk\'b3adnia:
+\par }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs17\b\f3 <sta\'b3a_liczbowa> ::= <sta\'b3a_dec> | <sta\'b3a_hex> | <sta\'b3a_bin>\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl 
+{\cs17\b\f3 <sta\'b3a_dec> ::= <cyfra_dec>\{<cyfra_dec>\}\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <sta\'b3a_hex> ::= $<cyfra_hex>\{<cyfra_hex>\}\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard 
+\widctlpar\intbl {\cs17\b\f3 <sta\'b3a_bin> ::= @<cyfra_bin>\{<cyfra_bin>\}\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <cyfra_dec> ::= 0|1|2|3|4|5|6|7|8|9\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard 
+\widctlpar\intbl {\cs17\b\f3 <cyfra_hex> ::= <cyfra_dec>|a|b|c|d|e|f|A|B|C|D|E|F\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs17\b\f3 <cyfra_bin> ::= 0|1\cell }\pard \widctlpar\intbl {
+\cs17\b\f3 \row }\pard \widctlpar {\cs18 
+\par Opis:
+\par }\pard\plain \s21\fi284\sb40\sa40\widctlpar \f2\fs20\lang1045 {\cs18 Makroasembler dopuszcza stosowanie sta\'b3ych liczbowych w uk\'b3adzie dziesi\'eatnym, szesnastkowym i dw\'f3jkowym. Sta\'b3e szesnastkowe rozpoczyna znak dolara \lquote }{\cs16\f3 $}{
+\cs18 \rquote , sta\'b3e dw\'f3jkowe znak at \lquote }{\cs16\f3 @}{\cs18 \rquote , sta\'b3e dziesi\'eatne nie wymagaj\'b9 \'bfadnego oznaczenia.
+\par }\pard\plain \widctlpar \f2\fs20\lang1045 {\cs18 
+\par Przyk\'b3ady:
+\par }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs16\f3 alfa\tab = $A12E\tab ; sta\'b3a szesnastkowa\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs16\f3 mask\tab = @00001111
+\tab ; sta\'b3a dw\'f3jkowa\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 cnt\tab .= 5\tab \tab ; sta\'b3a dziesi\'eatna\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard 
+\widctlpar\intbl {\cs16\f3 .n\tab .SET 07\tab ; sta\'b3a dziesi\'eatna\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar {\cs15\fs23 \page }{\cs20\fs12\super +{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super +} asm}K
+{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super K} makroasembler; makroasembler, operatory}#{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super #} operators}${\footnote \pard\plain \s19\widctlpar 
+\f2\fs20\lang1045 {\cs20\fs12\super $} Operatory}}{\cs15\fs23  Operatory}
+\par {\cs18 
+\par Tablica operator\'f3w:
+\par }\trowd \trgaph70\trleft-70 \cellx993\cellx4536\cellx5670\cellx9141 \pard \widctlpar\intbl {\cs17\b Priorytet\cell Operatory jednoargumentowe\cell Priorytet\cell Operatory dwuargumentowe\cell }\pard \widctlpar\intbl {\cs17\b \row }\trowd 
+\trgaph70\trleft-70 \cellx993\cellx4536\cellx5670\cellx9141 \pard \widctlpar\intbl {\cs17 1.\cell }{\cs17\b\f3 % $\cell }{\cs17 3.\cell }{\cs17\b\f3 * / %\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17 2.\cell }{\cs17\b\f3 
+[ ] ~ ! - > <\cell }{\cs17 4.\cell }{\cs17\b\f3 << >>\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17 \cell }{\cs17\b\f3 \cell }{\cs17 5.\cell }{\cs17\b\f3 + -\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard 
+\widctlpar\intbl {\cs17 \cell }{\cs17\b\f3 \cell }{\cs17 6.\cell }{\cs17\b\f3 & | ^\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17 \cell }{\cs17\b\f3 \cell }{\cs17 7.\cell }{\cs17\b\f3 > < >= <= == !=\cell }\pard 
+\widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17 \cell }{\cs17\b\f3 \cell }{\cs17 8.\cell }{\cs17\b\f3 &&\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\trowd \trgaph70\trleft-70 \cellx993\cellx4536\cellx5670\cellx9141 \pard 
+\widctlpar\intbl {\cs17 \cell }{\cs17\b\f3 \cell }{\cs17 9.\cell }{\cs17\b\f3 ||\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar 
+\par \pard \fi-1134\li1134\sb40\widctlpar {\cs18 Opis:
+\par Operatory jednoargumentowe.
+\par }{\cs16\f3 %<sta\'b3a>
+\par %<sta\'b3a>$}{\cs18 \tab Operator odwo\'b3ania do parametru makrodefinicji. Parametry s\'b9 numerowane od 1. Wywo\'b3anie %0 oznacza ilo\'9c\'e6 parametr\'f3w przekazanych makrodefinicji. Umieszczenie znaku \lquote }{\cs16\f3 $}{\cs18 \rquote  za odwo\'b3
+aniem do parametru oznacza, i\'bf oczekiwany jest parametr typu tekstowego. Wywo\'b3anie %0$ zwraca nazw\'ea makrodefinicji.
+\par }{\cs16\f3 [ ]}{\cs18  \tab Nawiasy s\'b3u\'bf\'b9 do zmiany kolejno\'9cci oblicze\'f1 wynikaj\'b9cej z priorytet\'f3w operator\'f3w.
+\par }{\cs16\f3 ~}{\cs18  \tab Negacja bitowa - zamiana wszystkich bit\'f3w wyra\'bfenia na przeciwne.
+\par }{\cs16\f3 !}{\cs18  \tab Negacja logiczna - zamiana wyra\'bfenie niezerowego na 0, a zerowego na 1.
+\par }{\cs16\f3 -}{\cs18  \tab Zmiana znaku liczby.
+\par }{\cs16\f3 >}{\cs18  \tab G\'f3rny (starszy) bajt s\'b3owa.
+\par }{\cs16\f3 <}{\cs18  \tab Dolny (m\'b3odszy) bajt s\'b3owa.
+\par 
+\par Operatory dwuargumentowe.
+\par }{\cs16\f3 * / %}{\cs18  \tab Mno\'bfenie, dzielenie ca\'b3kowitoliczbowe i operacja modulo.
+\par }{\cs16\f3 << >>}{\cs18  \tab Przesuni\'eacia w lewo i w prawo wyra\'bfenia o dan\'b9 liczb\'ea bit\'f3w.
+\par }{\cs16\f3 + -}{\cs18  \tab Dodawanie i odejmowanie.
+\par }{\cs16\f3 & | ^}{\cs18  \tab Operacje bitowej koniunkcji (and), sumy (or) i r\'f3\'bfnicy (xor).
+\par }{\cs16\f3 > < >= <= == !=}{\cs18  \tab Operacje por\'f3wnywania wyra\'bfe\'f1. Zwracaj\'b9 1 jako prawd\'ea i 0 jako fa\'b3sz.
+\par }{\cs16\f3 &&}{\cs18  \tab Logiczna koniunkcja (and). Zwraca 1 jako prawd\'ea i 0 jako fa\'b3sz.
+\par }{\cs16\f3 ||}{\cs18  \tab Logiczna alternatywa (or). Zwraca 1 jako prawd\'ea i 0 jako fa\'b3sz.
+\par }\pard \widctlpar {\cs18 
+\par }Przyk\'b3ady:
+\par \trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs16\f3 \tab LDA #%.n\tab ; za\'b3adowanie parametru numer \lquote .n\rquote  makra\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {
+\cs16\f3 \tab .DB %2$\tab ; odwo\'b3anie do tekstu zawartego w drugim parametrze makra\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab .REPEAT [n+1]*2\tab ; nawiasy zmieniaj\'b9ce kolejno\'9c\'e6 oblicze\'f1\cell }\pard 
+\widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab LDA #~mask\tab ; odwr\'f3cenie bit\'f3w sta\'b3ej \lquote mask\rquote \cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab .IF !.DEF(test)\tab ; je\'9c
+li NIE zdefiniowano etykiety \lquote test\rquote \cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab .BYTE -1\tab ; unarny minus (nie ma operatora unarnego \lquote +\rquote )\cell }\pard \widctlpar\intbl {\cs16\f3 \row 
+}\pard \widctlpar\intbl {\cs16\f3 \tab LDX #>$ABCD\tab ; za\'b3adowanie starszego bajtu adresu (tu: $AB)\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab LDY #<$ABCD\tab ; za\'b3adowanie m\'b3
+odszego bajtu adresu (tu: $CD)\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab .WORD 1<<8\tab ; przesuni\'eacie 1 w lewo o 8 bit\'f3w daje $100\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {
+\cs16\f3 \tab .BYTE n>>1\tab ; przesuni\'eacie \lquote n\rquote  w prawo o 1 bit\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab .BYTE adr&$FF\tab ; zredukowanie \lquote adr\rquote  przez zamaskowanie bit\'f3w\cell 
+}\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab LDA #mask|$80\tab ; ustawienie bitu nr 7\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab .DB mask^$0F\tab ; odwr\'f3cenie dolnych 4 bit\'f3
+w na przeciwne\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab .IF alfa==beta\tab ; je\'9cli etykiety maj\'b9 takie same warto\'9cci\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar\intbl {\cs16\f3 \tab 
+.IF alfa!=beta\tab ; je\'9cli etykiety maj\'b9 r\'f3\'bfne warto\'9cci\cell }\pard \widctlpar\intbl {\cs16\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs16\f3 \tab .IF .REF(Get) || .REF(Put) ; je\'9cli by\'b3o odwo\'b3anie do 
+\lquote Get\rquote  lub \lquote Put\rquote \cell }\pard \widctlpar\intbl {\cs16\f3 \row }\pard \widctlpar {\cs16\f3 \page }{\cs20\fs12\super +{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super +} asm}K{\footnote \pard\plain 
+\s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super K} makroasembler; makroasembler, wiersz programu \'9fr\'f3d\'b3owego; makroasembler, posta\'e6 wiersza programu}#{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super #} src_line}$
+{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super $} Wiersz programu \'9fr\'f3d\'b3owego}} {\cs15\fs23 Wiersz programu \'9fr\'f3d\'b3owego}{\cs18 
+\par 
+\par Sk\'b3adnia wiersza (trzy postacie):
+\par }\trowd \trgaph70\trleft-70 \cellx9142 \pard \widctlpar\intbl {\cs17\b\f3 <etykieta>[:]}{\cs16\f3 \tab }{\cs17\b\f3 [<rozkaz>|<dyrektywa>] [<komentarz>] <EOL>\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 \pard 
+\widctlpar\intbl {\cs17\b\f3 <odst\'eap>}{\cs16\f3 \tab }{\cs17\b\f3 [<rozkaz>|<dyrektywa>] [<komentarz>] <EOL>\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 [<komentarz>] <EOL>\cell }\pard \widctlpar\intbl {\cs17\b\f3 
+\row }\pard \widctlpar\intbl {\cs17\b\f3 \cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <komentarz> ::= \lquote ;\rquote <znaki>\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\trowd \trgaph70\trleft-70 \cellx9142 
+\pard \widctlpar\intbl {\cs17\b\f3 <odst\'eap> ::= \lquote  \rquote  | <TAB> \{\lquote  \rquote  | <TAB>\}\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar {\cs18 
+\par Opis:
+\par }\pard\plain \s21\fi284\sb40\sa40\widctlpar \f2\fs20\lang1045 {\cs18 Ka\'bfdy wiersz programu \'9fr\'f3d\'b3owego sk\'b3ada si\'ea z p\'f3l etykiety i rozkazu. W polu etykiety mo\'bfe wyst\'b9pi\'e6 etykieta lub znaki odst\'eapu. W polu rozkazu wyst\'ea
+puje rozkaz procesora 6502 lub dyrektywa makroasemblera. W dowolnym miejscu wiersza mo\'bfna umie\'9cci\'e6 komentarz.
+\par }\pard\plain \widctlpar \f2\fs20\lang1045 {\cs16\f3 \page }{\cs20\fs12\super +{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super +} asm}K{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super K}
+ makroasembler; makroasembler, tryby adresowania procesora 6502 i 65C02}#{\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super #} addr_modes}${\footnote \pard\plain \s19\widctlpar \f2\fs20\lang1045 {\cs20\fs12\super $}
+ Tryby adresowania procesora 6502 i 65C02}} {\cs15\fs23 Tryby adresowania procesora 6502 i 65C02}{\cs18 
+\par 
+\par Sk\'b3adnia tryb\'f3w adresowania:
+\par }\trowd \trgaph70\trleft-70 \cellx3828\cellx10632 \pard \widctlpar\intbl {\cs17\b\f3 <mnemonik>\cell }{\cs18 implikowane lub akumulatora (IMP, ACC)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\trowd \trgaph70\trleft-70 \cellx3828\cellx10632 \pard 
+\widctlpar\intbl {\cs17\b\f3 <mnemonik> # <wyra\'bfenie>\cell }{\cs18 natychmiastowe (IMM)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> <wyra\'bfenie>\cell }{\cs18 strony zerowej (ZPG) (*)\cell }\pard 
+\widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> <wyra\'bfenie>\cell }{\cs18 absolutne (ABS)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> <wyra\'bfenie> , X\cell }{\cs18 
+absolutne indeksowane przez X (ABS X)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> <wyra\'bfenie> , Y\cell }{\cs18 absolutne indeksowane przez Y (ABS Y)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard 
+\widctlpar\intbl {\cs17\b\f3 <mnemonik> <wyra\'bfenie> , X}{\cs16\f3 \cell }{\cs18 strony zerowej indeksowane przez X (ZPG X) (*)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> <wyra\'bfenie> , Y}{\cs16\f3 
+\cell }{\cs18 strony zerowej indeksowane przez Y (ZPG Y) (*)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> ( <wyra\'bfenie> , X )}{\cs16\f3 \cell }{\cs18 strony zerowej po\'9crednie preindeksowane przez X
+ (ZPGI X)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> ( <wyra\'bfenie> ) , Y}{\cs16\f3 \cell }{\cs18 strony zerowej po\'9crednie postindeksowane przez Y (ZPGI Y)\cell }\pard \widctlpar\intbl {\cs17\b\f3 
+\row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> <wyra\'bfenie>}{\cs16\f3 \cell }{\cs18 wzgl\'eadne (REL)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> ( <wyra\'bfenie> )}{\cs16\f3 \cell }{\cs18 
+absolutne po\'9crednie (ABSI)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> ( <wyra\'bfenie> )}{\cs16\f3 \cell }{\cs18 strony zerowej po\'9crednie (ZPGI) (tylko 65C02) (*)\cell }\pard \widctlpar\intbl {
+\cs17\b\f3 \row }\pard \widctlpar\intbl {\cs17\b\f3 <mnemonik> ( <wyra\'bfenie> , X )}{\cs16\f3 \cell }{\cs18 absolutne po\'9crednie indeksowane przez X (ABSI X) (tylko 65C02)\cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\trowd \trgaph70\trleft-70 
+\cellx3828\cellx10632 \pard \widctlpar\intbl {\cs16\f3 \cell }{\cs18\fs16 (*) je\'9cli wyra\'bfenie jest liczb\'b9 z zakresu <\endash 255,}{\fs16  }{\cs18\fs16 255>}{\cs16\f3 \cell }\pard \widctlpar\intbl {\cs17\b\f3 \row }\pard \widctlpar {\cs18 
+\par Dodatkowo w procesorze 65C02 wyst\'eapuj\'b9 dwa tryby adresowania dla rozkaz\'f3w operuj\'b9cych na bitach (SMB, RMB oraz BBS, BBR):
+\par }\trowd \trgaph70\trleft-70 \cellx6804\cellx10558 \pard \widctlpar\intbl {\cs17\b\f3 <SMB> | <RMB> # <wyra\'bfenie> , <wyra\'bfenie>}{\cs18 \cell nr bitu, adres na stronie zerowej\cell }\pard \widctlpar\intbl {\cs18 \row }\trowd \trgaph70\trleft-70 
+\cellx6804\cellx10558 \pard \widctlpar\intbl {\cs17\b\f3 <BBS> | <BBR> # <wyra\'bfenie> , <wyra\'bfenie> , <wyra\'bfenie>}{\cs18 \cell nr bitu, adres na stronie zerowej, przesuni\'eacie wzgl\'eadne\cell }\pard \widctlpar\intbl {\cs18 \row }\pard 
+\widctlpar {\cs18 
+\par 
+\par Opis tryb\'f3w adresowania:
+\par 
+\par }\pard \sa40\widctlpar {\cs18\b Implikowane lub akumulatora}{\cs18  s\'b9 trybami nie posiadaj\'b9cymi jawnych argument\'f3w. S\'b9 one domy\'9clne, np. dla CLC \endash  znacznik przeniesienia, dla LSR \endash  akumulator.
+\par }\pard \sa40\widctlpar\tx1771\tx10628 {\cs18\b Natychmiastowe}{\cs18  oznacza podanie danej (o rozmiarze bajtu) bezpo\'9crednio w kodzie programu, np. LDA\~#10, ADC\~#2.
+\par }{\cs18\b Strony zerowej}{\cs18  oznacza podanie adresu kom\'f3rki na stronie zerowej (adres o rozmiarze bajta). W podanej kom\'f3rce na stronie zerowej znajduje si\'ea dana (agrument) dla rozkazu, np. STA\~$80.}{\cs18\b 
+\par Absolutne}{\cs18  oznacza podanie adresu kom\'f3rki (adres o rozmiarze s\'b3owa). W podanej kom\'f3rce znajduje si\'ea dana (agrument) dla rozkazu, np. ROL $1000.}{\cs18\b 
+\par Absolutne indeksowane przez X}{\cs18  oznacza podanie adresu kom\'f3rki (adres o rozmiarze s\'b3owa). Do podanego adresu dodawana jest zawarto\'9c\'e6 rejestru X. W wyniku otrzymywany jest adres kom\'f3rki zawieraj\'b9cej dan\'b9
+ (agrument) dla rozkazu, np. SBC\~$1000,\~X.}{\cs18\b 
+\par Absolutne indeksowane przez Y}{\cs18  oznacza podanie adresu kom\'f3rki (adres o rozmiarze s\'b3owa). Do podanego adresu dodawana jest zawarto\'9c\'e6 rejestru Y. W wyniku otrzymywany jest adres kom\'f3rki zawieraj\'b9cej dan\'b9 (agrument) dla rozkazu,
+ np. ADC\~$1000,\~Y.}{\cs18\b 
+\par Strony zerowej indeksowane przez X}{\cs18  oznacza podanie adresu kom\'f3rki na stronie zerowej (adres o rozmiarze bajta). Do podanego adresu dodawana jest zawarto\'9c\'e6 rejestru X. Wynik dodawania modulo 256 jest adresem kom\'f3
+rki na stronie zerowej zawieraj\'b9cej dan\'b9 (agrument) dla rozkazu, np. CMP\~$10,\~X.}{\cs18\b 
+\par Strony zerowej indeksowane przez Y}{\cs18  oznacza podanie adresu kom\'f3rki na stronie zerowej (adres o rozmiarze bajta). Do podanego adresu dodawana jest zawarto\'9c\'e6 rejestru Y. Wynik dodawania modulo 256 jest adresem kom\'f3
+rki na stronie zerowej zawieraj\'b9cej dan\'b9 (agrument) dla rozkazu, np. LDX\~$10,\~Y.}{\cs18\b 
+\par Strony zerowej po\'9crednie preindeksowane przez X}{\cs18  oznacza podanie adresu kom\'f3rki na stronie zerowej (adres o rozmiarze bajta). Do podanego adresu dodawana jest zawarto\'9c\'e6 rejestru X. Wynik dodawania modulo 256 daje adres kom\'f3
+rki na stronie zerowej. Kom\'f3rka ta oraz kolejna po niej zawieraj\'b9 adres danej (agrumentu) dla rozkazu, np. AND\~($A4,\~X).}{\cs18\b 
+\par Strony zerowej po\'9crednie postindeksowane przez Y}{\cs18  oznacza podanie adresu kom\'f3rki na stronie zerowej (adres o rozmiarze bajta). Kom\'f3rka ta oraz kolejna po niej zawieraj\'b9 adres, do kt\'f3rego dodawana jest zawarto\'9c\'e6
+ rejestru Y. Wynik dodawania to adres danej (agrumentu) dla rozkazu, np. ORA\~($C2),\~Y.}{\cs18\b 
+\par Wzgl\'eadne}{\cs18  oznacza podanie jako argumentu adresu, do kt\'f3rego asembler oblicza odleg\'b3o\'9c\'e6 od bie\'bf\'b9cego rozkazu. Wynikiem jest liczba ze znakiem z zakresu \endash 128 do 127.
+\par }{\cs18\b Absolutne po\'9crednie
+\par Strony zerowej po\'9crednie (tylko 65C02)
+\par Absolutne po\'9crednie indeksowane przez X (tylko 65C02)
+\par }\pard\plain \s21\fi284\sb40\sa40\widctlpar \f2\fs20\lang1045 {\cs16\f3 \page }
+\par }
